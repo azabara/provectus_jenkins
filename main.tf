@@ -1,7 +1,7 @@
 resource "aws_instance" "jenkins-instance" {
   ami             = "ami-0976b07424f8f4ceb"
   instance_type   = "t2.medium"
-  №vpc_name        = "provectus"
+  #vpc_name        = "provectus"
   vpc_security_group_ids = [aws_security_group.sg_allow_ssh_jenkins.id]
   subnet_id     = aws_subnet.publicsubnets.id
     associate_public_ip_address = true
