@@ -1,33 +1,15 @@
 
-data "aws_ami" "amazon-linux-2" {
-  most_recent = true
-  owners = ["amazon"]
-
-  filter {
-    name = "name"
-    values = [
-      "ami-0976b07424f8f4ceb",
-    ]
-  }
-  filter {
-    name = "owner-alias"
-    values = [
-      "amazon",
-    ]
-  }
+provider "aws" {
+  region = "eu-central-1"
 }
 
 resource "aws_instance" "jenkins-instance" {
-  ami             = data.aws_ami.amazon-linux-2.id
+  ami             = ami-0976b07424f8f4ceb
   instance_type   = "t2.medium"
-  key_name        = tf-jenkins-aws
   vpc_id          = vpc-0b219a61
   vpc_security_group_ids = [aws_security_group.sg_allow_ssh_jenkins.id]
   subnet_id          = subnet-b4c31ac8
-  #name            = "${var.name}"
-  
-
-  associate_public_ip_address = true
+    associate_public_ip_address = true
   tags = {
     Name = "Jenkins-Instance"
   }
