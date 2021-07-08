@@ -17,7 +17,7 @@ resource "aws_instance" "jenkins-instance" {
 resource "aws_security_group" "sg_allow_ssh_jenkins" {
   name        = "allow_ssh_jenkins"
   description = "Allow SSH and Jenkins inbound traffic"
-  vpc_name    = "provectus" 
+  vpc_id      = "provectus" 
 
   ingress {
     from_port   = 22
