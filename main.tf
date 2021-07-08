@@ -8,7 +8,7 @@ resource "aws_instance" "jenkins-instance" {
   instance_type   = "t2.medium"
   vpc_name        = "provectus"
   vpc_security_group_ids = [aws_security_group.sg_allow_ssh_jenkins.id]
-  subnet_id          = subnet-b4c31ac8
+  subnet_id       = 
     associate_public_ip_address = true
   tags = {
     Name = "Jenkins-Instance"
@@ -18,7 +18,7 @@ resource "aws_instance" "jenkins-instance" {
 resource "aws_security_group" "sg_allow_ssh_jenkins" {
   name        = "allow_ssh_jenkins"
   description = "Allow SSH and Jenkins inbound traffic"
-  vpc_id      = vpc-0b219a61
+  vpc_id      = 
 
   ingress {
     from_port   = 22
