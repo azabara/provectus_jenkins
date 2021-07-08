@@ -11,7 +11,7 @@
 
 aws configure set default.region eu-central-1; aws configure set aws_access_key_id 'AKIA54F67BAO67XSLD47' ; aws configure set aws_secret_access_key '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'; aws ecr get-login
 
-DIR=${1:-"/home/ec2-user/test.txt"}
+DIR=${1:-"spring-petclinic/target/spring-petclinic-2.4.5.jar"}
 BASES3URI=${2:-"s3://bucket-of-tulips/jenkins/"}
 DATESTART=$(date +%F)
 
