@@ -4,9 +4,9 @@ provider "aws" {
 }
 
 resource "aws_instance" "jenkins-instance" {
-  ami             = ami-0976b07424f8f4ceb
+  ami             = "ami-0976b07424f8f4ceb"
   instance_type   = "t2.medium"
-  vpc_id          = vpc-0b219a61
+  vpc_name        = "provectus"
   vpc_security_group_ids = [aws_security_group.sg_allow_ssh_jenkins.id]
   subnet_id          = subnet-b4c31ac8
     associate_public_ip_address = true
