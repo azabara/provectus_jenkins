@@ -9,7 +9,7 @@
 #
 # Example: ./move_logs_to_s3.sh /log s3://massive-bucket/log-bkp
 
-DIR=${1:-"/var/lib/jenkins/workspace/test11/spring-petclinic/target/spring-petclinic-2.4.5.jar"}
+DIR=${1:-"/var/lib/jenkins/workspace/spring-petclinic/spring-petclinic/target/spring-petclinic-2.4.5.jar"}
 BASES3URI=${2:-"s3://bucket-of-tulips/jenkins/"}
 DATESTART=$(date +%F)
 
